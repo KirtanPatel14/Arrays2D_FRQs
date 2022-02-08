@@ -72,7 +72,15 @@ public class NitalTester {
      *      square has at least one row.
      */
     public static boolean isNital(int[][] square){
-        if(containsRepeats())
+        if(containsRepeats(square[0])) return false;
+        for( int i = 0; i < square.length; i++){
+            if(!hasAllValues(square[0], square[i])) return false;
+
+        }
+        for( int i = 0; i< square[0].length; i++){
+            if(!hasAllValues(square[0], ))
+        }
+
         return false;
     }
 
