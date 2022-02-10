@@ -22,12 +22,12 @@ public class WordPuzzle {
      * Precondition: r and c are valid indexes in blackBoxes
      */
     public boolean toBeLabeled(int r, int c, boolean [][] blackBoxes){
-        /* to be implemented in part a */
+        if (blackBoxes[r][c]) return false;
+        if (r==0||c==0) return true;
+        if (blackBoxes[r-1][c]) return true;
+        if(blackBoxes[r][c-1]) return true;
 
-
-
-
-        return false;    // replace this
+        return false;
     }
 
     /* Write the WordPuzzle Constructor.  The constructor should initialize the
@@ -48,9 +48,30 @@ public class WordPuzzle {
      * @param blackBoxes - a 2D array of Boxes
      */
     public WordPuzzle(boolean [][] blackBoxes){
-        /* to be implemented in part b */
+       int rows = blackBoxes.length;
+       int cols = blackBoxes[0].length;
+       puzzle = new Box[rows][cols];
+       int count = 1;
 
-
+       for(int r = 0; r< rows; r++){
+           for(int c = 0; c<cols; c++){
+               if(toBeLabeled(r,c,blackBoxes)){
+                   Box a = new Box(false,count);
+                   puzzle[r][c] = a;
+                   count++;
+               }
+               else{
+                   if(blackBoxes[r][c] == true){
+                       Box z = new Box(true, 0);
+                       puzzle[r][c]=z;
+                   }
+                   else{
+                       Box g = new Box(false,0);
+                       puzzle[r][c]=g;
+                   }
+               }
+           }
+       }
 
     }
 
