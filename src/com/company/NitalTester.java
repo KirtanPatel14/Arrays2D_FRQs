@@ -78,10 +78,10 @@ public class NitalTester {
 
         }
         for( int i = 0; i< square[0].length; i++){
-            if(!hasAllValues(square[0], ))
+            if(!hasAllValues(getColumn(square, 0), getColumn(square, i))) return false;
         }
 
-        return false;
+        return true;
     }
 
     public static void main(String[] args){
@@ -91,24 +91,25 @@ public class NitalTester {
         int[][] n4 = {{1,2,3},{3,1,2},{7,8,9}};
         int[][] n5 = {{1,2},{1,2}};
         int[][] n6 = {{1,1},{2,2}};
-        System.out.println(Arrays.toString(getColumn(n1, 1)));
-//        System.out.println(isNital(n1));
-//        System.out.println(isNital(n2));
-//        System.out.println(isNital(n3));
-//        System.out.println(isNital(n4));
-//        System.out.println(isNital(n5));
-//        System.out.println(isNital(n6));
+        System.out.println(Arrays.toString(getColumn(n1, 2)));
+        System.out.println(Arrays.toString(getColumn(n2, 1)));
+        System.out.println(isNital(n1));
+        System.out.println(isNital(n2));
+        System.out.println(isNital(n3));
+        System.out.println(isNital(n4));
+        System.out.println(isNital(n5));
+        System.out.println(isNital(n6));
 
-
-//        int [] arr1 = {1,2,3};
-//        int [] arr2 = {3,1,2};
-//        int [] arr3 = {2,1,2};
-//        System.out.println(hasAllValues(arr1,arr2));
-//        System.out.println(hasAllValues(arr1,arr3));
-//        System.out.println(hasAllValues(arr3,arr2));
-//        int[] arr4 = {1,2,3,4,5,6};
-//        int[] arr5 = {3,2,1,2,3};
-//        System.out.println(containsRepeats(arr4));
-//        System.out.println(containsRepeats(arr5));
+        System.out.println("");
+        int [] arr1 = {1,2,3};
+        int [] arr2 = {3,1,2};
+        int [] arr3 = {2,1,2};
+        System.out.println(hasAllValues(arr1,arr2));//true
+        System.out.println(hasAllValues(arr1,arr3));//false
+        System.out.println(hasAllValues(arr3,arr2));//false
+        int[] arr4 = {1,2,3,4,5,6};
+        int[] arr5 = {3,2,1,2,3};
+        System.out.println(containsRepeats(arr4));
+        System.out.println(containsRepeats(arr5));
     }
 }
